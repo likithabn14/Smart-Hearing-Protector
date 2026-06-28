@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Hearing Protector</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🛡️ Smart Hearing Protector</h1>
+    <p class="subtitle">
+        AI-powered protection against harmful headphone volume.
+    </p>
+
+    <div class="card">
+
+        <label class="switch">
+            <input type="checkbox" id="enabled" checked>
+            <span class="slider"></span>
+        </label>
+
+        <span class="label-text">Protection Enabled</span>
+
+        <hr>
+
+        <label>
+            Danger Threshold:
+            <span id="thresholdValue">70%</span>
+        </label>
+
+        <input
+            type="range"
+            id="threshold"
+            min="10"
+            max="100"
+            value="70">
+
+        <br><br>
+
+        <label>
+            Safe Volume:
+            <span id="safeValue">30%</span>
+        </label>
+
+        <input
+            type="range"
+            id="safeLevel"
+            min="5"
+            max="100"
+            value="30">
+
+        <hr>
+
+        <h3>Live Peak Audio</h3>
+
+        <div class="meter">
+            <div class="meter-fill" id="meterFill"></div>
+        </div>
+
+        <h2 id="peakText">0%</h2>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
